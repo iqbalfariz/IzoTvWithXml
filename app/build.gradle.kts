@@ -29,11 +29,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -48,11 +48,13 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation("androidx.cardview:cardview:1.0.0")
-    implementation("androidx.recyclerview:recyclerview:1.1.0")
-    implementation("com.google.android.material:material:1.2.1")
+    implementation("androidx.recyclerview:recyclerview:1.3.1")
+    implementation("com.google.android.material:material:1.9.0")
+
+    implementation("com.google.code.gson:gson:2.10.1")
 
     // github
-    implementation("com.github.bumptech.glide:glide:4.11.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     // retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -60,19 +62,17 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
     // coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
 
     // koin
     implementation("io.insert-koin:koin-android:3.5.0")
     implementation("io.insert-koin:koin-android-compat:3.5.0")
     implementation("io.insert-koin:koin-androidx-workmanager:3.5.0")
-    implementation("io.insert-koin:koin-androidx-navigation:3.5.0")
-    implementation("io.insert-koin:koin-androidx-compose:3.5.0")
 
     // room
-    implementation ("androidx.room:room-runtime:2.2.5")
-    kapt ("androidx.room:room-compiler:2.2.5")
-    androidTestImplementation ("androidx.room:room-testing:2.2.5")
+    implementation ("androidx.room:room-runtime:2.5.2")
+    kapt ("androidx.room:room-compiler:2.5.2")
+    androidTestImplementation ("androidx.room:room-testing:2.5.2")
 }
