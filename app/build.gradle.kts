@@ -35,6 +35,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -72,7 +76,8 @@ dependencies {
     implementation("io.insert-koin:koin-androidx-workmanager:3.5.0")
 
     // room
-    implementation ("androidx.room:room-runtime:2.5.2")
-    kapt ("androidx.room:room-compiler:2.5.2")
-    androidTestImplementation ("androidx.room:room-testing:2.5.2")
+    implementation ("androidx.room:room-runtime:2.5.0")
+    kapt ("androidx.room:room-compiler:2.5.0")
+    androidTestImplementation ("androidx.room:room-testing:2.5.0")
+    implementation("androidx.room:room-ktx:2.5.0")
 }
