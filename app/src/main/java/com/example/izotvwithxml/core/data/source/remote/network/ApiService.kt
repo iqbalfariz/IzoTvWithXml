@@ -12,7 +12,7 @@ interface ApiService {
         ContentTypeConstant.CONTENT_TYPE_JSON,
         AuthKey.AUTHORIZATION
     )
-    fun getPopularTvShows(
+    suspend fun getPopularTvShows(
         @Query("language") language: String,
         @Query("page") page: Int
     ): ListTvSeriesResponse

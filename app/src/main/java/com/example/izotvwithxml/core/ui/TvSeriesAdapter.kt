@@ -35,11 +35,11 @@ class TvSeriesAdapter: RecyclerView.Adapter<TvSeriesAdapter.ListViewHolder>() {
 
     inner class ListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val binding = ItemListTvSeriesBinding.bind(itemView)
-
+        val baseUrl = "https://image.tmdb.org/t/p/w500"
         fun bind(data: TvSeries) {
             with(binding) {
                 Glide.with(itemView.context)
-                    .load(data.posterPath)
+                    .load(baseUrl + data.posterPath)
                     .into(ivItemImage)
                 tvItemTitle.text = data.name
                 tvItemSubtitle.text = data.overview

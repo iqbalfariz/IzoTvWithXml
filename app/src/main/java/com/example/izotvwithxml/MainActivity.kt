@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.string.navigation_drawer_close
         )
 
+        binding.drawerLayout.addDrawerListener(toogle)
+        toogle.syncState()
+
         binding.navView.setNavigationItemSelectedListener(this)
 
         if (savedInstanceState == null) {
