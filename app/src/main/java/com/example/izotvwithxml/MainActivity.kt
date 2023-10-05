@@ -3,9 +3,12 @@ package com.example.izotvwithxml
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.izotvwithxml.databinding.ActivityMainBinding
+import com.example.izotvwithxml.ui.favorite.FavoriteFragment
 import com.example.izotvwithxml.ui.home.HomeFragment
 import com.google.android.material.navigation.NavigationView
 
@@ -41,9 +44,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-//        var fragment: Fragment? = null
-//        var title = getString(R.string.app_name)
-//        while (item.itemId)
+        var fragment: Fragment? = null
+        var title = getString(R.string.app_name)
+        when (item.itemId) {
+            R.id.nav_home -> {
+                fragment = HomeFragment()
+                title = getString(R.string.app_name)
+            }
+            R.id.nav_favorite -> {
+                fragment = FavoriteFragment()
+                title = getString(R.string.menu_favorite)
+            }
+        }
+        if (fragment != null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment, fragment)
+                .commit()
+        }
+        supportActionBar?.title = title
+
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 }
