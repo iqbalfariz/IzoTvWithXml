@@ -11,6 +11,7 @@ import com.example.izotvwithxml.R
 import com.example.izotvwithxml.core.data.Resource
 import com.example.izotvwithxml.core.ui.TvSeriesAdapter
 import com.example.izotvwithxml.databinding.FragmentHomeBinding
+import com.example.izotvwithxml.ui.detail.DetailTvSeriesActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
@@ -35,11 +36,11 @@ class HomeFragment : Fragment() {
 
         if (activity != null){
             val tvSeriesAdapter = TvSeriesAdapter()
-//            tvSeriesAdapter.onItemClick = { selectedData ->
-//                val intent = Intent(activity, DetailTourismActivity::class.java)
-//                intent.putExtra(DetailTourismActivity.EXTRA_DATA, selectedData)
-//                startActivity(intent)
-//            }
+            tvSeriesAdapter.onItemClick = { selectedData ->
+                val intent = Intent(activity, DetailTvSeriesActivity::class.java)
+                intent.putExtra(DetailTvSeriesActivity.EXTRA_DATA, selectedData)
+                startActivity(intent)
+            }
 
             homeViewModel.tvSeries.observe(viewLifecycleOwner) { tvSeries ->
                 if (tvSeries != null) {

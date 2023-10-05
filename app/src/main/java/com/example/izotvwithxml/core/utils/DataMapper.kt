@@ -46,7 +46,7 @@ object DataMapper {
                 posterPath = it.posterPath,
                 voteAverage = it.voteAverage,
                 voteCount = it.voteCount,
-                isFavorite = false
+                isFavorite = it.isFavorite
             )
         }
 
